@@ -31,7 +31,8 @@ class NotesController < ApplicationController
   end
 
   def destroy_all
-    Note.delete_all
+    @note = Note.all
+    @note.destroy_all
 
     # respond_to do |format|
     #   format.html { redirect_to notes_path, notice: 'page was successfully destroyed.' }

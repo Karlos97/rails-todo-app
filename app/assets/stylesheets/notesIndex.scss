@@ -1,0 +1,98 @@
+.app-header {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(138, 138, 231);
+}
+
+.dashboard {
+  height: 100%;
+  background-color: gray;
+  &-navigation {
+    width: inherit;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-bottom: 2px solid gold;
+
+    .list {
+      width: inherit;
+      display: flex;
+      list-style-type: none;
+
+      &-item {
+        margin-right: 1rem;
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .navigation-link {
+      padding: 1.3rem 0.8rem;
+      border-radius: 0.3rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background-color: rgb(153, 214, 153);
+      box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &-body {
+    .body-header {
+      text-align: center;
+    }
+
+    .dashboard-notes {
+      display: flex;
+    }
+
+    .note {
+      max-width: 20vw;
+      min-width: 3rem;
+      max-height: 20vh;
+      margin: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgb(228, 228, 113);
+      border-radius: 0.3rem;
+
+      .body {
+        margin: 0.4rem 0;
+      }
+    }
+    .navigation {
+      width: 100%;
+      position: sticky;
+      bottom: 0;
+
+      .link {
+        padding: 0.3rem 0.2rem;
+        border-radius: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        background-color: rgb(138, 146, 138);
+        box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
+
+// <li class='note'>
+//           <%= note.title %>
+//           <%= link_to "Details", note, class: 'link' %>
+//           <%= link_to 'Edit', edit_note_path(note.id), class: 'link' %>
+//           <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %>
+//         </li class='list-item'>

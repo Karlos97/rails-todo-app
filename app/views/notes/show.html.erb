@@ -1,8 +1,43 @@
-<h1>
-<%= @note.title %>
-</h1>
+<div class='app-header'>
+  <h3 class='h3 zero-margin'>To-Do Rails App</h3>
+</div>
 
-<h2>
-<%= @note.body %>
-</h2>
+<div class='dashboard'>
+  <nav class='dashboard-navigation'>
+    <ul class='list'>
+        <li class='list-item'><%= link_to 'Add new', new_note_path, class: 'navigation-link' %></li>
+        <li class='list-item'><%= link_to 'Add 10 notes', new_note_path, class: 'navigation-link' %></li>
+        <%# <li><%= link_to 'asdasd new', destroy_all_notes_path % ></li> %>
+        <%# <li>      
+          <%= link_to 'Delete All', method: :destroy_all_notes, data: { confirm: 'Are you sure?' } %>
+        </li> 
+    </ul>
+  </nav>
+
+  <div class='note-details'>
+        <div class='note'>
+            <h2 class= 'h2'>
+                <%= @note.title %>
+            </h2>
+            <p class= 'body h3'>
+                <%= @note.body %>
+            </p>
+    
+
+            <nav class='navigation'>
+                <%= link_to 'Edit', edit_note_path(@note.id), class: 'link' %> 
+                <%= link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %> 
+            </nav>
+                <p class= 'mute dates'>
+                     Date of creation: <%= @note.created_at.to_s.at(0..19) %>
+                </p>
+                <p class= 'mute dates'>
+                     Last Update: <%= @note.updated_at.to_s.at(0..19) %>
+                </p>
+        </div>
+    <nav class='navigation'>
+      <%= link_to 'Back', notes_path, class: 'navigation-link' %>
+    </nav>
+    </div>
+</div>
 

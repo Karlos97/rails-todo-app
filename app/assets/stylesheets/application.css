@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  height: inherit;
+  overflow: hidden;
+}

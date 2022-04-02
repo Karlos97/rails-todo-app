@@ -1,19 +1,37 @@
-<h1>Notes</h1>
-<ul>
-    <li><%= link_to 'Add new', new_note_path %></li>
-    <li>Add 10 notes</li>
-    <li>      
-      <%= link_to 'Delete All', method: :delete_all, data: { confirm: 'Are you sure?' } %>
-    </li>
-</ul>
-<h2>Notes list</h2>
-<ul>
-  <% @notes.each do |note| %>
-    <li>
-      <%= note.title %> 
-      <%= link_to "Details", note %>
-      <%= link_to 'Edit', edit_note_path(note.id) %>
-      <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+<div class='app-header'>
+  <h3 class='h3 zero-margin'>To-Do Rails App</h3>
+</div>
+
+<div class='dashboard'>
+  <nav class='dashboard-navigation'>
+    <ul class='list'>
+        <li class='list-item'><%= link_to 'Add new', new_note_path, class: 'navigation-link' %></li>
+        <li class='list-item'><%= link_to 'Add 10 notes', new_note_path, class: 'navigation-link' %></li>
+        <%# <li><%= link_to 'asdasd new', destroy_all_notes_path % ></li> %>
+        <%# <li>      
+          <%= link_to 'Delete All', method: :destroy_all_notes, data: { confirm: 'Are you sure?' } %>
+        </li> 
+    </ul>
+  </nav>
+
+  <div class='dashboard-body'>
+    <h2 class='h2 body-header'>Notes list</h2>
+    <ul class='dashboard-notes'>
+      <% @notes.each do |note| %>
+        <div class='note'>
+          <div class= 'h3'>
+            <%= note.title %>
+          </div>
+          <div class= 'body'>
+            <%= note.body %>
+          </div>
+          <nav class='navigation'>
+            <%= link_to "Details", note, class: 'link' %> 
+            <%= link_to 'Edit', edit_note_path(note.id), class: 'link' %> 
+            <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %> 
+          </nav>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

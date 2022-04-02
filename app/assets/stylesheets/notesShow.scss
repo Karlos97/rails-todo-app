@@ -1,0 +1,54 @@
+.note-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .note {
+    max-width: 20vw;
+    min-width: 3rem;
+    max-height: 20vh;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(228, 228, 113);
+    border-radius: 0.3rem;
+
+    .dates {
+      margin: 0.8rem 0 0;
+    }
+
+    .navigation {
+      width: 100%;
+      position: sticky;
+      bottom: 0;
+
+      .link {
+        padding: 0.3rem 0.2rem;
+        border-radius: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        background-color: rgb(138, 146, 138);
+        box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  .navigation-link {
+    transition: 0.2s;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    background-color: rgb(153, 214, 153);
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2.6px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      font-size: 1.1rem;
+    }
+  }
+}
