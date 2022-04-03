@@ -1,24 +1,11 @@
-# README
+# TO-DO App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is simple task which is more about rails - first steps than styling etc.
 
-Things you may want to cover:
+To run this project use:
 
-* Ruby version
+- bundle install
 
-* System dependencies
+- rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- and open localhost:3000/notes

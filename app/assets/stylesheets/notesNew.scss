@@ -4,8 +4,7 @@
   align-items: center;
 
   .note-form {
-    max-width: 20vw;
-    min-width: 3rem;
+    width: 12rem;
     max-height: 20vh;
     margin: 1rem;
     padding: 1rem;
@@ -19,6 +18,13 @@
     .body {
       background-color: transparent;
       border: none;
+      width: 12rem;
+      resize: none;
+    }
+
+    .body {
+      min-height: 10rem;
+      max-width: 12rem;
     }
   }
 

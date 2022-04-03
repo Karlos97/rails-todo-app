@@ -15,11 +15,11 @@
 
     <%= form_with scope: :note, url: notes_path, local: true do |form| %>
       <div class='note-form'>
-        <div>
-          <%= form.text_field :title, placeholder: "Title", class: 'title' %>
+        <div class='title'>
+          <%= form.text_area :title, placeholder: "Title", class: 'title' %>
         </div>
 
-        <div>
+        <div class='body'>       
           <%= form.text_area :body, placeholder: "Description", class: 'body' %>
         </div>
 

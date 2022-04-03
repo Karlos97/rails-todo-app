@@ -11,6 +11,17 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+  def multiple_new
+    for i in 1..10 do
+      @note = Note.new
+      @note.title = 'Note number ' + i.to_s
+      @note.body = 'Notes body'
+      @note.save
+    end
+
+    redirect_to notes_path
+  end
+
   def edit
     @note = Note.find(params[:id])
   end
@@ -18,26 +29,22 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(params.require(:note).permit(:title, :body))
     @note.save
+
+    redirect_to notes_path
   end
 
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
 
-    respond_to do |format|
-      format.html { redirect_to notes_path, notice: 'page was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to notes_path
   end
 
   def destroy_all
     @note = Note.all
     @note.destroy_all
 
-    # respond_to do |format|
-    #   format.html { redirect_to notes_path, notice: 'page was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+    redirect_to notes_path
   end
 
   def article_params
