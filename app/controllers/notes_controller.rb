@@ -1,10 +1,11 @@
 class NotesController < ApplicationController
+  before_action :set_note, only: %i[ show edit destroy ]
+
   def index
     @notes = Note.all
   end
 
   def show
-    @note = Note.find(params[:id])
   end
 
   def new
@@ -23,18 +24,16 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find(params[:id])
   end
 
   def create
-    @note = Note.new(params.require(:note).permit(:title, :body))
+    @note = Note.new(article_params)
     @note.save
 
     redirect_to notes_path
   end
 
   def destroy
-    @note = Note.find(params[:id])
     @note.destroy
 
     redirect_to notes_path
@@ -46,8 +45,14 @@ class NotesController < ApplicationController
 
     redirect_to notes_path
   end
+  
+  private
+    def article_params
+      params.require(:note).permit(:title, :body)
+    end
 
-  def article_params
-    params.require(:note).permit(:title, :body)
-  end
+    def set_note
+      @note = Note.find(params[:id])
+    end
+    
 end

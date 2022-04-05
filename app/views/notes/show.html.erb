@@ -1,40 +1,25 @@
-<div class='app-header'>
-  <h3 class='h3 zero-margin'>To-Do Rails App</h3>
-</div>
-
-<div class='dashboard'>
-  <nav class='dashboard-navigation'>
-    <ul class='list'>
-        <li class='list-item'><%= link_to 'Add New', new_note_path, class: 'navigation-link' %></li>
-        <li class='list-item'><%= link_to 'Add 10 Notes',multiple_new_notes_path, method: :put, data: { confirm: 'Are you sure?' }, class: 'navigation-link' %></li> 
-        <li class='list-item'><%= link_to 'Delete All',destroy_all_notes_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'navigation-link' %></li> 
-    </ul>
-  </nav>
-
   <div class='note-details'>
         <div class='note'>
-            <h2 class= 'h2'>
-                <%= @note.title %>
-            </h2>
-            <p class= 'body h3'>
-                <%= @note.body %>
-            </p>
-    
+          <h2 class= 'h2'>
+            <%= @note.title %>
+          </h2>
+          <p class= 'body h3'>
+            <%= @note.body %>
+          </p>
+  
 
-            <nav class='navigation'>
-                <%= link_to 'Edit', edit_note_path(@note.id), class: 'link' %> 
-                <%= link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %> 
-            </nav>
-                <p class= 'mute dates'>
-                     Date of creation: <%= @note.created_at.to_s.at(0..19) %>
-                </p>
-                <p class= 'mute dates'>
-                     Last Update: <%= @note.updated_at.to_s.at(0..19) %>
-                </p>
+          <nav class='navigation'>
+            <%= link_to 'Edit', edit_note_path(@note.id), class: 'link' %> 
+            <%= link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %> 
+          </nav>
+            <p class= 'mute dates'>
+              Date of creation: <%= @note.created_at.to_s.at(0..19) %>
+            </p>
+            <p class= 'mute dates'>
+              Last Update: <%= @note.updated_at.to_s.at(0..19) %>
+            </p>
         </div>
     <nav class='navigation'>
       <%= link_to 'Back', notes_path, class: 'navigation-link' %>
     </nav>
     </div>
-</div>
-
