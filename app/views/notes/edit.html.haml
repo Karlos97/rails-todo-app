@@ -1,13 +1,8 @@
-%div{class: 'new-note'}
+.new-note
   %h1.h1
     Edit note
-  = form_with scope: :note, url: notes_path, local: true do |form|
-    %div{class: 'note-form'}
-      %div
-        = form.text_area :title, placeholder: "Title", class: 'title' 
-      %div
-        = form.text_area :body, placeholder: "Description", class: 'body' 
-      %div
-        = form.submit class: 'navigation-link submit'
+
+  = render 'form', note: @note
+
   %nav.navigation
     = link_to 'Back', notes_path, class: 'navigation-link' 

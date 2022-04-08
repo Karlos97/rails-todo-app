@@ -1,0 +1,7 @@
+.new-note
+  %h1 New note
+  
+  = render 'form', note: @note
+
+  %nav.navigation
+    = link_to 'Back', notes_path, class: 'navigation-link'

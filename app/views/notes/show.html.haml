@@ -1,0 +1,19 @@
+.note-details
+  .note
+    %h2.h2
+      = @note.title 
+    %p{:class => 'body h3'}
+      = @note.body 
+
+
+    %nav.navigation
+      = link_to 'Edit', edit_note_path(@note.id), class: 'link'  
+      = link_to 'Delete', @note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link'  
+      %p{:class => 'mute dates'}
+        Date of creation: 
+        = @note.created_at.to_s.at(0..19) 
+      %p{:class => 'mute dates'}
+        Last Update: 
+        = @note.updated_at.to_s.at(0..19) 
+  %nav.navigation
+    = link_to 'Back', notes_path, class: 'navigation-link' 

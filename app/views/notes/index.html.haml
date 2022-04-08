@@ -1,0 +1,13 @@
+.dashboard-body
+  %h2{:class => "h2 body-header"} Notes list
+  %ul.dashboard-notes
+    - @notes.each do |note|
+      .note
+        .h3
+          = note.title   
+        .body
+          = note.body   
+        %nav.navigation
+          = link_to "Details", note, class: 'link'    
+          = link_to 'Edit', edit_note_path(note.id), class: 'link'    
+          = link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link'    

@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml-rails', '~> 2.0.1'
 
+gem 'rubocop'
+gem 'rubocop-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
