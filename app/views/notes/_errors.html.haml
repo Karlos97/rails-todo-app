@@ -1,0 +1,8 @@
+- if source.errors.any? 
+  .errors-wrapper
+    %h1.error-header
+      Following your actions some errors appeard. They are listed below.
+    %ul.errors-list
+      - source.errors.full_messages.each do |msg|  
+        %li.errors-list-item
+          = msg 

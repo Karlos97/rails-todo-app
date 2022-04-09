@@ -13,31 +13,38 @@ class NotesController < ApplicationController
 
   def multiple_new
     10.times { Note.create(title: "Sample Title", body: "Lorem ipsum ...") }
-    redirectToRoot
+    redirect_to_root
   end
 
   def edit; end
 
   def update
-    @note.update(note_params)
-    redirectToRoot
+    if @note.update(note_params)
+      redirect_to_root
+    else
+      render "edit"
+    end
   end
 
   def create
     @note = Note.new(note_params)
-    @note.save
-    redirectToRoot
+
+    if @note.save
+      redirect_to_root
+    else
+      render "new"
+    end
   end
 
   def destroy
     @note.destroy
-    redirectToRoot
+    redirect_to_root
   end
 
   def destroy_all
     @note = Note.all
     @note.destroy_all
-    redirectToRoot
+    redirect_to_root
   end
 
   private
@@ -50,7 +57,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
   end
 
-  def redirectToRoot
+  def redirect_to_root
     redirect_to notes_path
   end
 end
